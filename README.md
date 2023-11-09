@@ -36,6 +36,14 @@
 **c. Cómo Usar el Tutorial**
 
    El tutorial está organizado en capítulos, cada uno centrado en un tema específico de Numpy. A continuación, se describen los capítulos.
+   
+   1. Introducción a Numpy
+   2. Operaciones básicas en arreglos
+   3. Forma y tamaño de arreglos
+   4. Operaciones estadísticas y de álgebra lineal
+   5. Funcionalidades avanzadas
+   6. Entrada y salida de datos
+   6. Casos de uso avanzado   
 
 ---
 
