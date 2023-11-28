@@ -36,7 +36,7 @@ st.code("""
         """)
 
 st.markdown("""
-            #####Desde Archivos Binarios
+            ##### Desde Archivos Binarios
             NumPy también puede cargar datos desde archivos binarios utilizando
             [np.fromfile()](https://numpy.org/doc/stable/reference/generated/numpy.fromfile.html).
             Asegúrate de que los datos estén en un formato compatible con NumPy.
