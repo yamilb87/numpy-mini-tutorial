@@ -172,7 +172,7 @@ st.markdown("""
              Puedes aplicar estas funciones a arreglos NumPy completos o a elementos individuales,
              lo que facilita la realización de operaciones matemáticas y estadísticas en tus datos.
 
-            La siguiente table lista los operadores aritméticos comunmente implementados por Numpy:
+            La siguiente tabla lista los operadores aritméticos comunmente implementados por Numpy:
 
             | Operador	    | Ufunc equivalente   | Descripción                           |
             |---------------|---------------------|---------------------------------------|

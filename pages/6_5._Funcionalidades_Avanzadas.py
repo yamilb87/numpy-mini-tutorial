@@ -13,31 +13,89 @@ st.sidebar.success('Seleccionar página. ☝️')
 
 st.markdown("""
             En este quinto capítulo, exploraremos funcionalidades avanzadas de NumPy que te permitirán realizar operaciones más complejas y eficientes en arreglos NumPy.
-            Estas funcionalidades incluyen el broadcasting, el indexado booleano y el manejo de datos faltantes (NaN).
+            Estas funcionalidades incluyen el [broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html),
+            el [indexado](https://numpy.org/doc/stable/user/basics.indexing.html#) booleano
+             y el manejo de datos faltantes (NaN).
 
             #### Broadcasting
-            El broadcasting es una característica poderosa en NumPy que permite realizar operaciones entre arreglos de diferentes tamaños de una manera inteligente.
-            NumPy ajusta automáticamente las dimensiones de los arreglos para que las operaciones sean compatibles.
+            El broadcasting es una característica poderosa en NumPy que permite realizar operaciones entre arreglos de diferentes tamaños de una manera inteligente
+            (cumpliendo con ciertas reglas). NumPy ajusta automáticamente las dimensiones de los arreglos para que las operaciones sean compatibles.
+
+            ###### Broadcasting de Escalar a Array:
             """)
 st.code("""
         import numpy as np
 
-        # Creación de un arreglo NumPy
-        arr = np.array([1, 2, 3])
+        # Broadcasting de un escalar a un array
+        escalar = 5
+        array = np.array([1, 2, 3])
 
-        # Sumar un escalar a un arreglo
-        resultado = arr + 10
-        print("Broadcasting - Suma de un escalar:")
-        print(resultado)
-
-        # Sumar dos arreglos de diferentes tamaños
-        arr1 = np.array([1, 2, 3])
-        arr2 = np.array([10, 20])
-
-        resultado = arr1 + arr2
-        print("Broadcasting - Suma de dos arreglos de diferentes tamaños:")
-        print(resultado)
+        resultado = escalar * array
+        # El escalar se expande automáticamente para coincidir con la forma del array
+        print(resultado)  # Salida: [5, 10, 15]
         """)
+
+st.markdown("""
+            ###### Broadcasting de Arrays Unidimensionales:
+            """)
+
+st.code("""
+        import numpy as np
+
+        # Broadcasting de dos arrays unidimensionales
+        array1 = np.array([1, 2, 3])
+        array2 = np.array([4, 5, 6])
+
+        resultado = array1 + array2
+        # Ambos arrays se expanden automáticamente para coincidir con la forma del otro
+        print(resultado)  # Salida: [5, 7, 9]
+        """)
+
+st.markdown("""
+            ###### Broadcasting de Arrays Multidimensionales:
+            """)
+
+st.code("""
+        import numpy as np
+
+        # Broadcasting de dos arrays multidimensionales
+        matriz = np.array([[1, 2, 3], [4, 5, 6]])
+        vector = np.array([10, 20, 30])
+
+        resultado = matriz + vector
+        # El vector se expande automáticamente para coincidir con la forma de la matriz
+        print(resultado)
+        # Salida:
+        # [[11, 22, 33],
+        #  [14, 25, 36]]
+        """)
+
+st.markdown("""
+            ###### Broadcasting de Arrays con Formas Diferentes:
+            """)
+
+st.code("""
+        import numpy as np
+
+        # Broadcasting de un array 1D y un array 2D
+        array1D = np.array([1, 2, 3])
+        array2D = np.array([[10], [20], [30]])
+
+        resultado = array1D + array2D
+        # El array 1D se expande automáticamente para coincidir con la forma del array 2D
+        print(resultado)
+        # Salida:
+        # [[11, 12, 13],
+        #  [21, 22, 23],
+        #  [31, 32, 33]]
+        """)
+
+st.markdown("""
+            Estos son solo ejemplos básicos, y NumPy realiza broadcasting de manera más general para operaciones más complejas.
+            Es importante tener en cuenta las reglas de [broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html)
+             y cómo NumPy expande automáticamente las dimensiones para que las operaciones sean válidas.
+            """)
+
 
 st.markdown("""
             #### Indexado Booleano
